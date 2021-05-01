@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Navbar from '../../components/Navbar/Navbar';
 
-function Home() {
+function Home(props) {
+    let screenSize = window.screen.width;
     return (
-        <div>
-            
+        <div className="home">
+            <Navbar active="home" screenSize={screenSize}/>
         </div>
     )
 }
