@@ -1,0 +1,62 @@
+[
+    {
+        "essayType": "document",
+        "thesis": "This is a dummy thesis",
+        "title": "This is a dummy thesis",
+        "content": "This is dummy content",
+        "username": "John_Doe",
+        "karma": 100,
+        "reviews": [
+            {
+                "username": "Jane Doe",
+                "rating": 80,
+                "content": "This is a dummy review"
+            }
+        ]
+    },
+    {
+        "essayType": "document",
+        "thesis": "This is a dummy thesis",
+        "title": "This is a dummy thesis",
+        "content": "This is dummy content",
+        "username": "John_Doe",
+        "karma": 120,
+        "reviews": [
+            {
+                "username": "Jane Doe",
+                "rating": 80,
+                "content": "This is a dummy review"
+            }
+        ]
+    },
+    {
+        "essayType": "document",
+        "thesis": "This is a dummy thesis",
+        "title": "This is a dummy thesis",
+        "content": "This is dummy content",
+        "username": "John_Doe",
+        "karma": 100,
+        "reviews": [
+            {
+                "username": "Jane Doe",
+                "rating": 80,
+                "content": "This is a dummy review"
+            }
+        ]
+    },
+    {
+        "essayType": "document",
+        "thesis": "This is a dummy thesis",
+        "title": "This is a dummy thesis",
+        "content": "This is dummy content",
+        "username": "John_Doe",
+        "karma": 100,
+        "reviews": [
+            {
+                "username": "Jane Doe",
+                "rating": 80,
+                "content": "This is a dummy review"
+            }
+        ]
+    }
+]
