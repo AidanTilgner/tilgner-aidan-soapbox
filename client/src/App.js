@@ -15,7 +15,7 @@ import UserProfile from './pages/UserProfile/UserProfile';
 
 //components
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import Footer from './components/FooterNav/FooterNav';
 import React from 'react';
 import axios from 'axios';
 
@@ -33,10 +33,9 @@ class App extends React.Component {
   componentDidMount = () => {
     axios.get(API_URL + '/essays')
     .then(res => {
-      // this.setState({
-      //   recommendedEssays: res,
-      // })
-      console.log(res)
+      this.setState({
+        recommendedEssays: res.data,
+      })
     })
     .catch(err => {
       console.log(err)
@@ -46,18 +45,14 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <Navbar/>
           <Switch>
             <Redirect exact from='/' to='/home'/>
-            <Route path='/home'
-              render={props => {
-                <Home 
-                  {...props}
-                  recommendedVideos={this.state.recommendedVideos}
+            <Route path='/home'>
+                <Home
+                  recommendedEssays={this.state.recommendedEssays}
                   recommendedTopics={this.state.recommendedTopics}
                 />
-              }}
-            />
+            </Route> 
             <Route path="/search/:query"
               render={props => {
                 <Search {...props}/>
@@ -82,7 +77,6 @@ class App extends React.Component {
               }}
             />
           </Switch>
-        <Footer/>
       </div>
     );
   }

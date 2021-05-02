@@ -1,6 +1,9 @@
+//modules
 import React from 'react';
-import './Navbar.scss';
 import { Link } from 'react-router-dom';
+
+//files
+import './Navbar.scss';
 
 function Navbar(props){
     return (

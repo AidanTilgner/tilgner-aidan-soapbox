@@ -1,9 +1,14 @@
 import React from 'react'
 
-function EssayPreview() {
+function EssayPreview({essayType, content, thesis, title, channel, karma}) {
     return (
-        <div>
-            
+        <div className="essay-preview">
+            <p>{essayType}</p>
+            <p>{content}</p>
+            <p>{thesis}</p>
+            <p>{title}</p>
+            <p>{channel}</p>
+            <p>{karma}</p>
         </div>
     )
 }
