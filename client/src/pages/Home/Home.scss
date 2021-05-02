@@ -8,8 +8,21 @@
     padding-block-start: 90px;
     padding-block-end: 90px;
 
+    @include tablet{
+        padding-block-start: 110px;
+        padding-block-end: 110px;
+    }
+
     &__title{
         align-self: flex-start;
         margin-left: 18px;
+
+        @include tablet{
+            margin-left: 30px;
+        }
+
+        @include desktop{
+            margin-left: 145px;
+        }
     }
 }

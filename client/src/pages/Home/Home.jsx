@@ -4,6 +4,7 @@ import React from 'react';
 //components
 import Navbar from '../../components/Navbar/Navbar';
 import EssayPreview from '../../components/EssayPreview/EssayPreview';
+import RecommendedEssays from '../../components/RecommendedEssays/RecommendedEssays';
 import FooterNav from '../../components/FooterNav/FooterNav';
 
 //files
@@ -15,19 +16,7 @@ class Home extends React.Component {
         return (
             <div className="home">
                 <Navbar active="home"/>
-                <h1 className="home__title">ESSAYS</h1>
-                {this.props.recommendedEssays.map(essay => {
-                    return(
-                        <EssayPreview
-                            essayType={essay.essayType}
-                            content={essay.content}
-                            thesis={essay.thesis}
-                            title={essay.title}
-                            channel={essay.username}
-                            karma={essay.karma}
-                        />
-                    )
-                })}
+                <RecommendedEssays/>
                 <FooterNav active="home"/>
             </div>
         )
