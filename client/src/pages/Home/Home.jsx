@@ -15,7 +15,7 @@ class Home extends React.Component {
         return (
             <div className="home">
                 <Navbar active="home"/>
-                <h1 className="home__title">VIDEOS</h1>
+                <h1 className="home__title">ESSAYS</h1>
                 {this.props.recommendedEssays.map(essay => {
                     return(
                         <EssayPreview

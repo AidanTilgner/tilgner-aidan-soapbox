@@ -15,7 +15,7 @@ import UserProfile from './pages/UserProfile/UserProfile';
 
 //components
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/FooterNav/FooterNav';
+import FooterNav from './components/FooterNav/FooterNav';
 import React from 'react';
 import axios from 'axios';
 

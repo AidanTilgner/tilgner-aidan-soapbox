@@ -1,0 +1,38 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.footer-nav{
+    background-color: $soapbox-blue;
+    padding-inline-start: 18px;
+    padding-inline-end: 18px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    @include tablet{
+        display: none;
+    }
+
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    &__item{
+        color: $white;
+        margin: 0;
+    }
+
+    &__link{
+        color: $white;
+        text-decoration: none;
+    }
+}

@@ -16,7 +16,7 @@ function FooterNav(props) {
                     <Link to='/home' className="footer-nav__link">Home</Link>
                 </li>
                 <li className={`footer-nav__item ${props.active === 'user-profile' && 'active'}`}>
-                    <Link to='/User/:id'>User</Link>
+                    <Link to='/user/:id' className="footer-nav__link">User</Link>
                 </li>
             </ul>
         </div>

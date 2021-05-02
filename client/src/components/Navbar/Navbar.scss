@@ -5,18 +5,26 @@
 .navbar{
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     padding-inline-start: 18px;
     padding-inline-end: 18px;
     background-color: $soapbox-blue;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
 
     @include tablet{
         padding-inline-start: 30px;
         padding-inline-end: 30px;
+        height: 100px;
     }
 
     @include desktop{
         padding-inline-start: 145px;
         padding-inline-end: 145px;
+        height: 80px;
     }
 
     &__logo{

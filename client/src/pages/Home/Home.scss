@@ -5,6 +5,8 @@
 .home{
     display: flex;
     flex-direction: column;
+    padding-block-start: 90px;
+    padding-block-end: 90px;
 
     &__title{
         align-self: flex-start;

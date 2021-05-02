@@ -1,14 +1,20 @@
-import React from 'react'
+//modules
+import React from 'react';
+
+//files
+import './EssayPreview.scss';
 
 function EssayPreview({essayType, content, thesis, title, channel, karma}) {
     return (
         <div className="essay-preview">
-            <p>{essayType}</p>
-            <p>{content}</p>
-            <p>{thesis}</p>
-            <p>{title}</p>
-            <p>{channel}</p>
-            <p>{karma}</p>
+            {essayType === 'document' &&
+            <>
+                <div className="essay-preview__content">
+                    {content}
+                </div>
+            </>
+            }
+            
         </div>
     )
 }

@@ -1,0 +1,12 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.essay-preview{
+    box-shadow: 0.2px 0.2px 5px 4px rgba(0, 0, 0, 0.25);
+    margin: 26px 18px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
