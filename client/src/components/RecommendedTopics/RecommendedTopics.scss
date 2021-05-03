@@ -1,3 +1,32 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
+
+.recommended-topics{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-inline-start: 18px;
+    padding-inline-end: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @include tablet{
+        padding-inline-start: 30px;
+        padding-inline-end: 30px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    @include desktop{
+        padding-inline-start: 145px;
+        padding-inline-end: 145px;
+        width: 80%;
+    }
+
+    &__title{
+        text-align: left;
+        width: 100%;
+    }
+}

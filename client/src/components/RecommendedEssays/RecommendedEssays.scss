@@ -8,6 +8,7 @@
     width: 100%;
     padding-inline-start: 18px;
     padding-inline-end: 18px;
+    margin-top: 30px;
 
     @include tablet{
         padding-inline-start: 30px;
@@ -24,6 +25,7 @@
     }
 
     &__title{
-        margin-right: auto;
+        text-align: left;
+        width: 100%;
     }
 }

@@ -3,8 +3,8 @@ import React from 'react';
 
 //components
 import Navbar from '../../components/Navbar/Navbar';
-import EssayPreview from '../../components/EssayPreview/EssayPreview';
 import RecommendedEssays from '../../components/RecommendedEssays/RecommendedEssays';
+import RecommendedTopics from '../../components/RecommendedTopics/RecommendedTopics';
 import FooterNav from '../../components/FooterNav/FooterNav';
 
 //files
@@ -17,6 +17,7 @@ class Home extends React.Component {
             <div className="home">
                 <Navbar active="home"/>
                 <RecommendedEssays/>
+                <RecommendedTopics/>
                 <FooterNav active="home"/>
             </div>
         )
