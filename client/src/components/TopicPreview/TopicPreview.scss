@@ -43,5 +43,10 @@
         left: 0;
         right: 0;
         filter: blur(1.5px);
+        transition: .3s ease-in-out;
+    }
+
+    &:hover &__thumbnail{
+        transform: scale(1.2);
     }
 }

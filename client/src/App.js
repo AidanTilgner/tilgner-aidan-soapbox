@@ -43,11 +43,9 @@ class App extends React.Component {
                 <EssayView {...props}/>
               }}
             />
-            <Route path="/topics"
-              render={props => {
-                <Topics {...props}/>
-              }}
-            />
+            <Route path="/topics">
+              <Topics/>
+            </Route>
             <Route path="/upload"
               render={<Upload/>}
             />

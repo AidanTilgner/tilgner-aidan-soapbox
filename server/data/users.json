@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Aidan Tilgner",
+        "username": "aidantilgner02",
+        "password": "password",
+        "profilePic": "https://images.pexels.com/photos/4839558/pexels-photo-4839558.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "description": "Hey I'm Aidan, I'm a Web Developer and I love to play guitar.",
+        "topics": [
+
+        ],
+        "essays": [
+            
+        ]
+    }
+]
