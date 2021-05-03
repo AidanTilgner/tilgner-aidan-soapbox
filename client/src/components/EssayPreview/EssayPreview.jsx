@@ -9,9 +9,11 @@ function EssayPreview({essayType, content, thesis, title, channel, karma}) {
         <div className="essay-preview">
             {essayType === 'document' &&
             <>
-                <div className="essay-preview__content">
-                    {content}
+                <div className="essay-preview__thesis">
+                    {thesis}
                 </div>
+                <p className="essay-preview__karma">Karma: {karma}</p>
+                <p className="essay-preview__channel">{channel}</p>
             </>
             }
             

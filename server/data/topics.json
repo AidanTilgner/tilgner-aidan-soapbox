@@ -1,0 +1,51 @@
+[
+    {
+        "topic": "Sports",
+        "thumbnail": "https://images.pexels.com/photos/47354/the-ball-stadion-football-the-pitch-47354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "keywords": [
+            "kicking",
+            "kick",
+            "punching",
+            "punch",
+            "throwing",
+            "throw",
+            "playing",
+            "play",
+            "game",
+            "field",
+            "flag",
+            "soccer",
+            "football",
+            "cricket",
+            "ping pong",
+            "basketball",
+            "hockey",
+            "olympics"
+        ],
+        "connectedEssays": []
+    },
+    {
+        "topic": "American Politics",
+        "thumbnail": "https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+        "keywords": [],
+        "connectedEssays": []
+    },
+    {
+        "topic": "Tech",
+        "thumbnail": "https://images.pexels.com/photos/270366/pexels-photo-270366.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "keywords": [],
+        "connectedEssays": []
+    },
+    {
+        "topic": "Science",
+        "thumbnail": "https://images.pexels.com/photos/3992943/pexels-photo-3992943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "keywords": [],
+        "connectedEssays": []
+    },
+    {
+        "topic": "Climate Change",
+        "thumbnail": "https://images.pexels.com/photos/221012/pexels-photo-221012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "keywords": [],
+        "connectedEssays": []
+    }
+]

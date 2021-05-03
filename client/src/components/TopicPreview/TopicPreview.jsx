@@ -1,9 +1,14 @@
-import React from 'react'
+//modules
+import React from 'react';
 
-function TopicPreview() {
+//files
+import './TopicPreview.scss'
+
+function TopicPreview({topic, thumbnail}) {
     return (
-        <div>
-            
+        <div className="topic-preview">
+            <h2 className="topic-preview__title">{topic}</h2>
+            <img src={thumbnail} alt="" className="topic-preview__thumbnail"/>
         </div>
     )
 }

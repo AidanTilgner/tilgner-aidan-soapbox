@@ -25,33 +25,13 @@ const API_URL = `http://localhost:${API_PORT}`;
 
 class App extends React.Component {
 
-  state={
-    recommendedEssays: [],
-    recommendedTopics: []
-  }
-
-  componentDidMount = () => {
-    axios.get(API_URL + '/essays')
-    .then(res => {
-      this.setState({
-        recommendedEssays: res.data,
-      })
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
-
   render(){
     return (
       <div className="App">
           <Switch>
             <Redirect exact from='/' to='/home'/>
             <Route path='/home'>
-                <Home
-                  recommendedEssays={this.state.recommendedEssays}
-                  recommendedTopics={this.state.recommendedTopics}
-                />
+                <Home/>
             </Route> 
             <Route path="/search/:query"
               render={props => {

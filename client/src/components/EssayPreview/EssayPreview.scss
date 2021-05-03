@@ -3,10 +3,46 @@
 @use '../../partials/variables' as *;
 
 .essay-preview{
-    box-shadow: 0.2px 0.2px 5px 4px rgba(0, 0, 0, 0.25);
-    margin: 26px 18px;
-    height: 220px;
+    box-shadow: 0.2px 0.2px 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 26px 0px;
+    height: 55vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+
+    @include tablet{
+        margin: 48px 0px;
+    }
+
+    @include desktop{
+        margin: 0;
+        box-shadow: none;
+        border: .5px solid $steel;
+        width: 33%;
+        height: 200px;
+    }
+
+    &__thesis{
+        font-size: 22px;
+        font-weight: 600;
+        color: $black;
+    }
+
+    &__karma{
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        color: rgba($color: $black, $alpha: .8);
+        font-weight: 600;
+    }
+
+    &__channel{
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        color: rgba($color: $black, $alpha: .8);
+        font-weight: 600;
+    }
 }
