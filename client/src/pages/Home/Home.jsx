@@ -14,11 +14,11 @@ import './Home.scss'
 function Home (props) {
     return (
         <div className="home">
-            <Navbar active="home"/>
+            <Navbar active="home" username={props.username}/>
             <RecommendedEssays/>
             <RecommendedTopics/>
             <UploadButton/>
-            <FooterNav active="home"/>
+            <FooterNav active="home" username={props.username}/>
         </div>
     )
 }

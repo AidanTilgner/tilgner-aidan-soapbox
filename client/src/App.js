@@ -24,6 +24,18 @@ const API_PORT = 8080;
 const API_URL = `http://localhost:${API_PORT}`;
 
 class App extends React.Component {
+  state={
+    username: "aidantilgner02"
+  }
+
+  componentDidMount = () => {
+    // axios.get(`${API_URL}/users/${this.state.username}`)
+    // .then(res => {
+    //   this.setState({
+
+    //   })
+    // })
+  } 
 
   render(){
     return (
@@ -33,27 +45,21 @@ class App extends React.Component {
             <Route path='/home'>
                 <Home/>
             </Route> 
-            <Route path="/search/:query"
-              render={props => {
-                <Search {...props}/>
-              }}
-            />
-            <Route path="/essays/:id"
-              render={props => {
-                <EssayView {...props}/>
-              }}
-            />
+            <Route path="/search/:query">
+              <Search/>
+            </Route>
+            <Route path="/essays/:id">
+              <EssayView/>
+            </Route>
             <Route path="/topics">
               <Topics/>
             </Route>
-            <Route path="/upload"
-              render={<Upload/>}
-            />
-            <Route path="/user/:username"
-              render={props => {
-                <UserProfile {...props}/>
-              }}
-            />
+            <Route path="/upload">
+              <Upload/>
+            </Route>
+            <Route path="/user/:username">
+              <UserProfile/>
+            </Route>
           </Switch>
       </div>
     );
