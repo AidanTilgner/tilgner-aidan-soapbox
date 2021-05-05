@@ -1,0 +1,128 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.upload{
+    display: flex;
+    flex-direction: column;
+    padding-block-start: 90px;
+    padding-block-end: 90px;
+
+    @include tablet{
+        padding-block-start: 110px;
+        padding-block-end: 110px;
+    }
+
+    @include desktop{
+        padding-block-start: 90px;
+        padding-block-end: 90px;
+    }
+
+    &__title{
+        text-align: left;
+        margin: 30px 18px;
+
+        @include tablet{
+            margin: 55px 30px;
+        }
+
+        @include desktop{
+            margin: 75px 145px;
+        }
+    }
+
+    &__form{
+        margin: 0px 18px;
+
+        @include tablet{
+            margin: 0px 30px;
+        }
+
+        @include desktop{
+            margin: 0px 145px;
+        }
+    }
+
+    &__essay-type{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 24px;
+        
+        &>*{
+            margin-right: 28px;
+        }
+    }
+
+    &__radio{
+        margin-right: 8px;
+    }
+
+    &__essay-details{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label{
+        padding: 2px 9px;
+        border-radius: 8px;
+        background-color: $soapbox-blue;
+        color: $white;
+        font-weight: 400;
+        font-size: 15px;
+        width: fit-content;
+        margin-bottom: 14px;
+
+        &--radio{
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        &--form-section{
+            margin-right: 0;
+            margin-bottom: 14px;
+            padding: 0;
+            width: 100%;
+            text-align: left;
+            color: $black;
+            background-color: #fff;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+
+    &__input{
+        margin-bottom: 35px;
+        border: 1px solid $steel;
+        border-radius: 10px;
+        font-size: 15px;
+        padding: 10px 15px;
+
+        &--file{
+
+        }
+    }
+
+    &__textarea{
+        margin-bottom: 35px;
+        border: 1px solid $steel;
+        border-radius: 10px;
+        font-size: 15px;
+        padding: 10px 15px;
+        height: 90px;
+        font-family: sans-serif;
+    }
+
+    #synopsis{
+
+    }
+
+    #content{
+        height: 200px;
+    }
+
+    :focus{
+        outline: none;
+    }
+}

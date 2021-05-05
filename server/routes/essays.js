@@ -26,8 +26,8 @@ const getRecommendedEssays = (essays) => {
 }
 
 //middleware for getting forms
-Router.use(bodyParser.json);
-Router.use(methodOverride('_method'));
+// Router.use(bodyParser.json);
+// Router.use(methodOverride('_method'));
 
 //mongoDB URI
 mongoURI = 'mongodb://localhost:27017/soapbox';

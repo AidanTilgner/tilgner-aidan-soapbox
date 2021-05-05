@@ -5,7 +5,6 @@
 .recommended-topics{
     display: flex;
     flex-direction: column;
-    width: 100%;
     padding-inline-start: 18px;
     padding-inline-end: 18px;
     margin-top: 30px;
@@ -16,13 +15,12 @@
         padding-inline-end: 30px;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
 
     @include desktop{
         padding-inline-start: 145px;
         padding-inline-end: 145px;
-        width: 80%;
     }
 
     &__title{

@@ -5,6 +5,7 @@
         "title": "This is a dummy thesis",
         "content": "This is dummy content",
         "username": "John_Doe",
+        "synopsis": "Dummy stuff is in this essay",
         "karma": 100,
         "reviews": [
             {
