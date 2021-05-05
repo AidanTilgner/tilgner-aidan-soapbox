@@ -10,6 +10,7 @@ const topicRoutes = require('./routes/topics');
 const userRoutes = require('./routes/users');
 
 app.use(cors());
+app.use('/', express.static('public'));
 app.use('/essays', essayRoutes);
 app.use('/topics', topicRoutes)
 app.use('/users', userRoutes)
