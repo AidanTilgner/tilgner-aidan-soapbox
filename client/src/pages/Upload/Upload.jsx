@@ -12,7 +12,52 @@ import './Upload.scss'
 class Upload extends React.Component {
 
     state={
-        essayType: 'document',
+        isDocument: true
+    }
+
+    handleChange = (e) => {
+        e.preventDefault();
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    checkForm = (e) => {
+        let inputs = Array.from(document.querySelectorAll('input'));
+        inputs.push(...Array.from(document.querySelectorAll('textarea')));
+        console.log(inputs);
+
+        let complete = false;
+
+        inputs.forEach(input => {
+            if(input.value === null || input.value === ''){
+                complete = false;
+                input.style.border = '1px solid #B03C09';
+            }
+        })
+
+        if(complete === true){
+            this.setState({
+                formComplete: true,
+            })
+        }else{
+            this.setState({
+                formComplete: false,
+            })
+        }
+
+        return complete;
+    }
+
+    handleSubmit = (e) => {
+        this.checkForm()
+        if(this.state.formComplete){
+            if(this.state.isDocument){
+
+            }else{
+
+            }
+        }
     }
 
     render(){
@@ -20,23 +65,29 @@ class Upload extends React.Component {
             <div className="upload">
                 <Navbar active='upload'/>
                 <h1 className="upload__title">New Essay</h1>
-                <form className="upload__form">
+                <form 
+                    className="upload__form"
+                    onSubmit={e => {
+                        e.preventDefault();
+                        this.handleSubmit();
+                    }}
+                >
                     <div className="upload__essay-type">
-                        <label htmlFor="essay-type" className="upload__label upload__label--form-section">Essay Type</label>
-                        <input 
-                            type="radio" 
-                            name="essay-type" 
-                            id="document" 
-                            className="upload__radio"
-                        />
-                        <label htmlFor="essay-type" className="upload__label upload__label--radio">Document</label>
-                        <input 
-                            type="radio" 
-                            name="essay-type" 
-                            id="video" 
-                            className="upload__radio"
-                        />
-                        <label htmlFor="essay-type" className="upload__label upload__label--radio">Video</label>
+                        <label className="upload__label upload__label--form-section">Essay Type</label>
+                        <button
+                            className="upload__button upload__button--essay-type"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                this.setState({
+                                    isDocument: !this.state.isDocument
+                                })
+                            }}
+                        >
+                            {
+                                this.state.isDocument ?
+                                'Document' : 'Video'
+                            }
+                        </button>
                     </div>
                     <div className="upload__essay-details">
                         <p className="upload__label upload__label--form-section">Essay Details</p>
@@ -47,6 +98,10 @@ class Upload extends React.Component {
                             id="thesis"
                             placeholder="Thesis"
                             className="upload__input"
+                            onChange={e => this.handleChange(e)}
+                            onBlur={e => {
+
+                            }}
                         />
                         <label htmlFor="synopsis" className="upload__label">Synopsis</label>
                         <textarea 
@@ -54,6 +109,7 @@ class Upload extends React.Component {
                             id="synopsis" 
                             placeholder="Synopsis"
                             className="upload__textarea"
+                            onChange={e => this.handleChange(e)}
                         />
                         <label htmlFor="title" className="upload__label">Title</label>
                         <input 
@@ -62,31 +118,58 @@ class Upload extends React.Component {
                             id="title"
                             placeholder="Title"
                             className="upload__input"
+                            onChange={e => this.handleChange(e)}
                         />
                         <label 
                             htmlFor={`${this.state.essayType === 'document' ? 'content' : 'file'}`}
                             className="upload__label"
                         >
-                            {this.state.essayType === 'document' ? 'Content' : 'File'}
+                            {this.state.isDocument ? 'Content' : 'File'}
                         </label>
                         {
-                            this.state.essayType === 'document' && 
+                            this.state.isDocument && 
                             <textarea 
                                 name="content"
                                 placeholder="Content"
                                 id="content"    
                                 className="upload__textarea"
+                                onChange={e => this.handleChange(e)}
                             />
                         }
                         {
-                            this.state.essayType === 'video' &&
-                            <input 
-                                type='file'
-                                name='file'
-                                placeholder='File'
-                                className="upload__input upload__input--file"
-                            />
+                            !this.state.isDocument &&
+                            <label className="upload__input-file-cover">
+                                Choose File
+                                <input 
+                                    type='file'
+                                    name='file'
+                                    placeholder='File'
+                                    className="upload__input upload__input--file"
+                                    onChange={e => this.handleChange(e)}
+                                />
+                            </label>
                         }
+                    </div>
+                    {
+                        this.state.formComplete == false &&
+                        <p className="upload__warning">* please fill out required fields</p>
+                    }
+                    <div className="upload__buttons">
+                        <button
+                            className="upload__button upload__button--cancel"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                this.props.history.goBack();
+                            }}
+                        >
+                            Cancel
+                        </button>
+                        <button 
+                            className="upload__button upload__button--submit"
+                            type="submit"
+                        >
+                            Upload
+                        </button>
                     </div>
                 </form>
                 <FooterNav active='upload'/>

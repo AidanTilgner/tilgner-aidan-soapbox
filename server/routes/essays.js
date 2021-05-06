@@ -1,13 +1,14 @@
+//default stuff
 const express = require('express');
 const Router = express.Router();
 const FS = require('fs');
 const path = require('path');
+
+//mongo stuff
+const crypto = require('crypto');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
-const Grid = require('gridfs-stream');
-const methodOverride = require('method-override');
-const bodyParser = require('body-parser');
 
 let essays = JSON.parse(
     FS.readFileSync(
@@ -25,23 +26,23 @@ const getRecommendedEssays = (essays) => {
     return essays;
 }
 
-//middleware for getting forms
-// Router.use(bodyParser.json);
-// Router.use(methodOverride('_method'));
-
 //mongoDB URI
-mongoURI = 'mongodb://localhost:27017/soapbox';
+mongoURI = 'mongodb://localhost:27017/essays';
 
 //Create mongo connection
-const conn = mongoose.createConnection(mongoURI);
+const conn = mongoose.createConnection(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 //Initialize gfs
-let gfs;
+let stream;
 
 conn.once('open', () => {
     //init stream
-    gfs = Grid(conn.db, mongoose.mongo);
-    gfs.collection('essays');
+    stream = new mongoose.mongo.GridFSBucket(conn.db, {
+        bucketName: 'essays',
+    });
 })
 
 //Create storage engine
@@ -50,18 +51,18 @@ const storage = new GridFsStorage({
     file: (req, file) => {
         return new Promise((resolve, reject) => {
             crypto.randomBytes(16, (err, buf) => {
-                if (err){
-                    return reject(err);
-                }
-                const filename = buf.toString('hex') + path.extname(file.originalname);
-                const fileInfo = {
-                    filename: filename,
-                    bucketName: 'essays'
-                };
-                resolve(fileInfo);
+            if (err) {
+                return reject(err);
+            }
+            const filename = buf.toString('hex') + path.extname(file.originalname);
+            const fileInfo = {
+                filename: filename,
+                bucketName: 'essays',
+            };
+            resolve(fileInfo);
             });
         });
-    }
+    },
 });
 const upload = multer({ storage });
 
@@ -73,8 +74,7 @@ Router.get('/', (req, res) => {
 });
 
 //posting a new file to the database
-Router.post('/', upload.single('file'), (req, res) => {c
-    console.log('file recieved')
+Router.post('/', upload.single('file'), (req, res) => {
     res.json({ file: req.file });
 });
 

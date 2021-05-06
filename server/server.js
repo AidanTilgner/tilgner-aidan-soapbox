@@ -9,6 +9,9 @@ const essayRoutes = require('./routes/essays');
 const topicRoutes = require('./routes/topics');
 const userRoutes = require('./routes/users');
 
+app.use(express.json());
+app.set("view engine", "ejs");
+
 app.use(cors());
 app.use('/', express.static('public'));
 app.use('/essays', essayRoutes);

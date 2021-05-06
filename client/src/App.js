@@ -54,9 +54,10 @@ class App extends React.Component {
             <Route path="/topics">
               <Topics/>
             </Route>
-            <Route path="/upload">
-              <Upload/>
-            </Route>
+            <Route 
+              path="/upload"
+              component={Upload}
+            />
             <Route path="/user/:username">
               <UserProfile/>
             </Route>

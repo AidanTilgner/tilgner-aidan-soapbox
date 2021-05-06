@@ -100,8 +100,22 @@
         padding: 10px 15px;
 
         &--file{
-
+            display: none;
         }
+    }
+
+    &__warning{
+        color: $alert-red;
+        margin: 24px 0;
+        text-align: left;
+    }
+
+    &__input-file-cover{
+        border: 2px solid $soapbox-blue;
+        border-radius: 99px;
+        height: 25px;
+        color: $soapbox-blue;
+        margin-bottom: 24px;
     }
 
     &__textarea{
@@ -115,14 +129,59 @@
     }
 
     #synopsis{
-
+        overflow: scroll;
     }
 
     #content{
         height: 200px;
+        overflow: scroll;
     }
 
     :focus{
         outline: none;
+    }
+
+    &__buttons{
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &__button{
+        margin-bottom: 14px;
+        border: none;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 0;
+        border-radius: 10px;
+
+        &--essay-type{
+            background-color: $soapbox-blue;
+            padding: 5px 10px;
+            color: white;
+        }
+
+        &--cancel{
+            border: 2px solid $alert-red;
+            background-color: white;
+            color: $alert-red;
+
+            &:hover{
+                border: none;
+                background-color: $alert-red;
+                color: white;
+            }
+        }
+
+        &--submit{
+            background-color: $soapbox-blue;
+            color: white;
+
+            &:hover{
+                background-color: white;
+                border: 2px solid $soapbox-blue;
+                color: $soapbox-blue;
+            }
+        }
     }
 }
