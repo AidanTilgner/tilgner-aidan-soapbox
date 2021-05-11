@@ -30,8 +30,8 @@ class EssayView extends React.Component {
                 rating: null,
                 content: null
             }
-        ]
-        
+        ],
+        voted: false
     }
 
     componentDidMount = () => {
@@ -52,6 +52,50 @@ class EssayView extends React.Component {
         .catch(err => {
             console.log(err)
         })
+    }
+
+    handleDownvote = (e) => {
+        if(!this.state.voted){
+            this.setState({
+                voted: true,
+                karma: this.state.karma - 1
+            })
+            axios.put(`${API_URL}/essays/${this.state.id}/karma`, {
+                karma: -1
+            })
+            e.target.style.color = '#C4C4C4';
+        } else{
+            this.setState({
+                voted: false,
+                karma: this.state.karma + 1
+            })
+            axios.put(`${API_URL}/essays/${this.state.id}/karma`, {
+                karma: 1
+            })
+            e.target.style.color = '#2B2930';
+        }
+    }
+
+    handleUpvote = (e) => {
+        if(!this.state.voted){
+            this.setState({
+                voted: true,
+                karma: this.state.karma + 1
+            })
+            axios.put(`${API_URL}/essays/${this.state.id}/karma`, {
+                karma: 1
+            })
+            e.target.style.color = '#C4C4C4';
+        } else{
+            this.setState({
+                voted: false,
+                karma: this.state.karma - 1
+            })
+            axios.put(`${API_URL}/essays/${this.state.id}/karma`, {
+                karma: -1
+            })
+            e.target.style.color = '#2B2930';
+        }
     }
 
     render(){
@@ -77,9 +121,9 @@ class EssayView extends React.Component {
                         {this.state.synopsis}
                     </p>
                     <p className="essay-view__karma">
-                        <span onClick={this.handleDownvote} className="essay-view__karma--icon">-</span>
+                        <span onClick={e => this.handleDownvote(e)} className="essay-view__karma--icon">-</span>
                         {this.state.karma}
-                        <span onClick={this.handleDownvote} className="essay-view__karma--icon">+</span>
+                        <span onClick={e => this.handleUpvote(e)} className="essay-view__karma--icon">+</span>
                     </p>
                 </div>
                 <div className="essay-view__reviews">

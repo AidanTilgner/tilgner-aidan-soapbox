@@ -6,6 +6,7 @@ import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import FooterNav from "../../components/FooterNav/FooterNav";
 import RecommendedEssays from "../../components/RecommendedEssays/RecommendedEssays";
+import UploadButton from '../../components/UploadButton/UploadButton';
 
 //files
 import "./UserProfile.scss";
@@ -48,6 +49,7 @@ class UserProfile extends React.Component {
             </div>
             <RecommenedEssays/>
             <RecommendedTopics/>
+            <UploadButton/>
             <FooterNav />
         </div>
         );

@@ -61,7 +61,11 @@ class App extends React.Component {
             </Route>
             <Route 
               path="/upload"
-              component={Upload}
+              render={props => {
+                return(
+                  <Upload {...props}/>
+                )
+              }}
             />
             <Route 
               exact path="/user/:username"

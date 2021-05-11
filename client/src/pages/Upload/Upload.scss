@@ -94,7 +94,7 @@
 
     &__input{
         margin-bottom: 35px;
-        border: 1px solid $steel;
+        border: 2px solid $steel;
         border-radius: 10px;
         font-size: 15px;
         padding: 10px 15px;
@@ -120,12 +120,13 @@
 
     &__textarea{
         margin-bottom: 35px;
-        border: 1px solid $steel;
+        border: 2px solid $steel;
         border-radius: 10px;
         font-size: 15px;
         padding: 10px 15px;
         height: 90px;
         font-family: sans-serif;
+        resize: none;
     }
 
     #synopsis{
@@ -145,6 +146,11 @@
         margin-bottom: 24px;
         display: flex;
         flex-direction: column-reverse;
+
+        @include desktop{
+            flex-direction: row-reverse;
+            width: 100%;
+        }
     }
 
     &__button{
@@ -154,6 +160,11 @@
         font-weight: 600;
         padding: 10px 0;
         border-radius: 10px;
+
+        @include desktop{
+            margin-left: 14px;
+            padding: 10px 50px;
+        }
 
         &--essay-type{
             background-color: $soapbox-blue;
@@ -167,13 +178,13 @@
             color: $alert-red;
 
             &:hover{
-                border: none;
                 background-color: $alert-red;
                 color: white;
             }
         }
 
         &--submit{
+            border: 2px solid $soapbox-blue;
             background-color: $soapbox-blue;
             color: white;
 

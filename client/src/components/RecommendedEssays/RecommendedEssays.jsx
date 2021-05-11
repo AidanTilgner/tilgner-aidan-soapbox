@@ -19,18 +19,11 @@ class RecommenedEssays extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log('hello');
         axios.get(API_URL + '/essays')
         .then(res => {
             this.setState({
                 recommendedEssays: res.data,
             })
-            
-            if(res){
-                console.log('res')
-            }else{
-                console.log('I am not working right')
-            }
         })
         .catch(err => {
             console.log(err)
@@ -38,7 +31,6 @@ class RecommenedEssays extends React.Component {
     }
 
     render(){
-        console.log('hey')
         return (
             <div className="recommended-essays">
                 <h1 className="recommended-essays__title">ESSAYS</h1>

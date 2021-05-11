@@ -10,16 +10,17 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 
+//get essays as a variable
 let essays = JSON.parse(
-    FS.readFileSync(
-        path.resolve(
-            __dirname,
-            '../data/essays.json'),
-            (err, data) => {
-                if(err){
-                    return err;
-                }
-                return data;
+FS.readFileSync(
+    path.resolve(
+        __dirname,
+        '../data/essays.json'),
+        (err, data) => {
+            if(err){
+                return err;
+            }
+            return data;
 }));
 
 const getRecommendedEssays = (essays) => {
@@ -87,9 +88,46 @@ Router.get('/:id', (req, res) => {
     }
 });
 
+//changing the karma of an essay by id
+Router.put('/:id/karma', (req, res) => {
+    console.log(req.params.id)
+
+    essay = getEssayById(essays, req.params.id)
+
+    console.log(essay);
+    console.log(req.body)
+    
+    newEssay = essay;
+    newEssay.karma += req.body.karma;
+
+    essays.splice(essays.indexOf(essay), 1, newEssay)
+
+    FS.writeFileSync(
+        path.resolve(
+            __dirname,
+            '../data/essays.json'),
+        JSON.stringify(essays)
+    )
+
+    res.json(essays);
+})
+
 //posting a new file to the database
-Router.post('/', upload.single('file'), (req, res) => {
-    res.json({ file: req.file });
+Router.post('/', (req, res) => {
+    let newEssay = req.body;
+    newEssay.id = crypto.randomBytes(12).toString('hex');
+    newEssay.keywords = newEssay.thesis.split(' ');
+    newEssay.karma = 0;
+
+    essays.push(newEssay)
+
+    FS.writeFileSync(
+        path.resolve(
+            __dirname,
+            '../data/essays.json'),
+        JSON.stringify(essays)
+    )
+    res.json(essays);
 });
 
 module.exports = Router;

@@ -39,6 +39,7 @@ class RecommendedTopics extends React.Component {
                         <TopicPreview
                             topic={topic.topic}
                             thumbnail={topic.thumbnail}
+                            keywords={topic.keywords}
                         />
                     )
                 })}

@@ -9,6 +9,10 @@ import FooterNav from '../../components/FooterNav/FooterNav';
 //files
 import './Upload.scss'
 
+//axios stuff
+const API_PORT = 8080;
+const API_URL = `http://localhost:${API_PORT}`;
+
 class Upload extends React.Component {
 
     state={
@@ -25,14 +29,15 @@ class Upload extends React.Component {
     checkForm = (e) => {
         let inputs = Array.from(document.querySelectorAll('input'));
         inputs.push(...Array.from(document.querySelectorAll('textarea')));
-        console.log(inputs);
 
-        let complete = false;
+        let complete = true;
 
         inputs.forEach(input => {
             if(input.value === null || input.value === ''){
                 complete = false;
-                input.style.border = '1px solid #B03C09';
+                input.style.border = '2px solid #B03C09';
+            } else{
+                input.style.border = '2px solid #C4C4C4';
             }
         })
 
@@ -40,7 +45,7 @@ class Upload extends React.Component {
             this.setState({
                 formComplete: true,
             })
-        }else{
+        }else if(complete === false){
             this.setState({
                 formComplete: false,
             })
@@ -50,13 +55,25 @@ class Upload extends React.Component {
     }
 
     handleSubmit = (e) => {
-        this.checkForm()
-        if(this.state.formComplete){
+        if(this.checkForm()){
+            console.log("submitting")
             if(this.state.isDocument){
-
+                axios.post(`${API_URL}/essays`, {
+                    essayType: "document",
+                    thesis: this.state.thesis,
+                    title: this.state.title,
+                    content: this.state.content,
+                    username: "Aidan Tilgner",
+                    synopsis: this.state.synopsis,
+                    reviews: [
+                        { "username": "Your mom", "rating": 100, "content": "Great job hun!" }
+                    ]
+                })
             }else{
 
             }
+
+            this.props.history.push('/user/Soapbox')
         }
     }
 
