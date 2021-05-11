@@ -1,12 +1,13 @@
 //modules
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //files
 import './EssayPreview.scss';
 
-function EssayPreview({essayType, content, thesis, title, channel, karma}) {
+function EssayPreview({essayType, content, thesis, title, channel, karma, id}) {
     return (
-        <div className="essay-preview">
+        <Link to={`/essay/${id}`} className="essay-preview">
             {essayType === 'document' &&
             <>
                 <div className="essay-preview__thesis">
@@ -17,7 +18,7 @@ function EssayPreview({essayType, content, thesis, title, channel, karma}) {
             </>
             }
             
-        </div>
+        </Link>
     )
 }
 

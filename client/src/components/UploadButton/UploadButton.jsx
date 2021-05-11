@@ -1,10 +1,16 @@
-import React from 'react'
+//modules
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+//files
+import './UploadButton.scss';
 
 function UploadButton() {
     return (
-        <div>
-            
-        </div>
+        <Link to="/upload" className="upload-button">
+            <div className="upload-button__line1"></div>
+            <div className="upload-button__line2"></div>
+        </Link>
     )
 }
 

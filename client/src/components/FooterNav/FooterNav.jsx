@@ -16,7 +16,9 @@ function FooterNav(props) {
                     <Link to='/home' className="footer-nav__link">Home</Link>
                 </li>
                 <li className={`footer-nav__item ${props.active === 'user-profile' && 'active'}`}>
-                    <Link to='/user/:id' className="footer-nav__link">User</Link>
+                    <Link to={`/user/${props.username ? props.username : 'Soapbox'}`} className="footer-nav__link">
+                    <img src="https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" className="footer-nav__user-profile"/>
+                    </Link>
                 </li>
             </ul>
         </div>

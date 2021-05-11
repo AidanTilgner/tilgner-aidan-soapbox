@@ -1,0 +1,38 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.upload-button{
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    background-color: $soapbox-blue;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 105px;
+    right: 9px;
+    z-index: 5;
+    box-shadow: .2px .2px 5px 5px rgba(0, 0, 0, .2);
+
+    @include tablet{
+        display: none;
+    }
+
+    &__line1{
+        height: 10px;
+        background-color: #fff;
+        position: absolute;
+        top: 35px;
+        right: 15px;
+        left: 15px;
+    }
+
+    &__line2{
+        width: 10px;
+        background-color: #fff;
+        position: absolute;
+        left: 35px;
+        top: 15px;
+        bottom: 15px;
+    }
+}

@@ -21,12 +21,12 @@ class RecommenedEssays extends React.Component {
     componentDidMount = () => {
         axios.get(API_URL + '/essays')
         .then(res => {
-        this.setState({
-            recommendedEssays: res.data,
-        })
+            this.setState({
+                recommendedEssays: res.data,
+            })
         })
         .catch(err => {
-        console.log(err)
+            console.log(err)
         })
     }
 
@@ -43,6 +43,7 @@ class RecommenedEssays extends React.Component {
                                 title={essay.title}
                                 channel={essay.username}
                                 karma={essay.karma}
+                                id={essay.id}
                             />
                         )
                     })}

@@ -13,6 +13,7 @@
     bottom: 0;
     right: 0;
     left: 0;
+    z-index: 5;
 
     @include tablet{
         display: none;
@@ -34,5 +35,12 @@
     &__link{
         color: $white;
         text-decoration: none;
+    }
+
+    &__user-profile{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
     }
 }

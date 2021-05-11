@@ -22,30 +22,36 @@
             "hockey",
             "olympics"
         ],
-        "connectedEssays": []
+        "essays": []
     },
     {
         "topic": "American Politics",
         "thumbnail": "https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
         "keywords": [],
-        "connectedEssays": []
+        "essays": []
     },
     {
         "topic": "Tech",
         "thumbnail": "https://images.pexels.com/photos/270366/pexels-photo-270366.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "keywords": [],
-        "connectedEssays": []
+        "essays": []
     },
     {
         "topic": "Science",
         "thumbnail": "https://images.pexels.com/photos/3992943/pexels-photo-3992943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "keywords": [],
-        "connectedEssays": []
+        "essays": []
     },
     {
         "topic": "Climate Change",
         "thumbnail": "https://images.pexels.com/photos/221012/pexels-photo-221012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "keywords": [],
-        "connectedEssays": []
+        "essays": []
+    },
+    {
+        "topic": "Food",
+        "thumbnail": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "keywords": [],
+        "essays": []
     }
 ]

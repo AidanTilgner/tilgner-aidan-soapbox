@@ -1,0 +1,89 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.essay-view{
+    padding-block-start: 80px;
+    padding-block-end: 80px;
+    color: $black;
+
+    @include tablet{
+        padding-block-start: 100px;
+        padding-block-end: 100px;
+    }
+
+    @include desktop{
+        padding-block-start: 80px;
+        padding-block-end: 80px;
+    }
+
+    &__content-container{
+        border-bottom: 1px solid $steel;
+        height: 60vh;
+        overflow: scroll;
+        text-align: left;
+        padding-block-start: 24px;
+        padding-block-end: 24px;
+        padding-inline-start: 18px;
+        padding-inline-end: 18px;
+
+        @include tablet{
+            padding-inline-start: 30px;
+            padding-inline-end: 30px;
+        }
+
+        @include desktop{
+            padding-inline-start: 145px;
+            padding-inline-end: 145px;
+        }
+    }
+
+    &__content{
+        font-size: 18px;
+    }
+
+    &__info{
+        text-align: left;
+        padding-inline-start: 18px;
+        padding-inline-end: 18px;
+
+        @include tablet{
+            padding-inline-start: 30px;
+            padding-inline-end: 30px;
+        }
+
+        @include desktop{
+            padding-inline-start: 145px;
+            padding-inline-end: 145px;
+        }
+    }
+
+    &__thesis{
+
+    }
+
+    &__title{
+
+    }
+
+    &__channel{
+
+    }
+
+    &__description{
+
+    }
+
+    &__karma{
+        color: $black;
+
+        &--icon{
+            cursor: pointer;
+            font-size: 18px;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

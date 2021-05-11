@@ -1,0 +1,16 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    font-weight: 300;
+    background-color: #0068B1;
+    color: white;
+    margin: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

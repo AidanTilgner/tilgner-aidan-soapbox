@@ -5,7 +5,6 @@
 .recommended-essays{
     display: flex;
     flex-direction: column;
-    width: 100%;
     padding-inline-start: 18px;
     padding-inline-end: 18px;
     margin-top: 30px;
@@ -18,7 +17,6 @@
     @include desktop{
         padding-inline-start: 145px;
         padding-inline-end: 145px;
-        width: 80%;
         flex-direction: row;
         justify-content: flex-start;
         flex-wrap: wrap;
