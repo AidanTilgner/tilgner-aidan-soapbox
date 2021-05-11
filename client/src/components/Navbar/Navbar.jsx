@@ -2,6 +2,9 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+//components
+import { ReactComponent as SearchIcon } from '../../assets/icons/searchIcon.svg';
+
 //files
 import './Navbar.scss';
 
@@ -40,7 +43,7 @@ function Navbar(props){
                             if(e.code === 'Enter'){
                                 console.log('searching..')
                                 history.push(
-                                    `/search/${e.target.value}`
+                                    `/search/${e.target.value.split(' ').join('+')}`
                                 )
                             }
                         }}
