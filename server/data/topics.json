@@ -11,6 +11,7 @@
             "throw",
             "playing",
             "play",
+            "player",
             "game",
             "field",
             "flag",
@@ -20,38 +21,78 @@
             "ping pong",
             "basketball",
             "hockey",
-            "olympics"
+            "olympics",
+            "league"
         ],
         "essays": []
     },
     {
         "topic": "American Politics",
         "thumbnail": "https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-        "keywords": [],
+        "keywords": [
+            "big government",
+            "democrats",
+            "republicans",
+            "campaign"
+        ],
         "essays": []
     },
     {
         "topic": "Tech",
         "thumbnail": "https://images.pexels.com/photos/270366/pexels-photo-270366.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "keywords": [],
+        "keywords": [
+            "innovation",
+            "ai",
+            "artificial intelligence",
+            "digital"
+        ],
         "essays": []
     },
     {
         "topic": "Science",
         "thumbnail": "https://images.pexels.com/photos/3992943/pexels-photo-3992943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "keywords": [],
+        "keywords": [
+            "science",
+            "scientific",
+            "artificial",
+            "intelligence",
+            "global warming",
+            "global",
+            "warming",
+            "climate change",
+            "mars"
+        ],
         "essays": []
     },
     {
         "topic": "Climate Change",
         "thumbnail": "https://images.pexels.com/photos/221012/pexels-photo-221012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "keywords": [],
+        "keywords": [
+            "temperature",
+            "global warming",
+            "greenhouse",
+            "carbon dioxide",
+            "CO2",
+            "fossil fuels",
+            "emissions"
+        ],
         "essays": []
     },
     {
         "topic": "Food",
         "thumbnail": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "keywords": [],
+        "keywords": [
+            "butter",
+            "food",
+            "healthy",
+            "crunchy",
+            "sandwich",
+            "burger",
+            "bread",
+            "delicious",
+            "tasty",
+            "tastiest"
+        ],
         "essays": []
     }
 ]

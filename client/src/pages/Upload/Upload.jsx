@@ -27,7 +27,7 @@ class Upload extends React.Component {
     }
 
     checkForm = (e) => {
-        let inputs = Array.from(document.querySelectorAll('input'));
+        let inputs = Array.from(document.querySelectorAll('input')).filter(el => el.id !== 'search');
         inputs.push(...Array.from(document.querySelectorAll('textarea')));
 
         let complete = true;
@@ -36,6 +36,7 @@ class Upload extends React.Component {
             if(input.value === null || input.value === ''){
                 complete = false;
                 input.style.border = '2px solid #B03C09';
+                console.log('failure' + input)
             } else{
                 input.style.border = '2px solid #C4C4C4';
             }
@@ -50,13 +51,12 @@ class Upload extends React.Component {
                 formComplete: false,
             })
         }
-
+        
         return complete;
     }
 
     handleSubmit = (e) => {
         if(this.checkForm()){
-            console.log("submitting")
             if(this.state.isDocument){
                 axios.post(`${API_URL}/essays`, {
                     essayType: "document",
