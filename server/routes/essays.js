@@ -31,6 +31,26 @@ const getEssayById = (essays, id) => {
     return essays.find(essay => essay.id === id);
 }
 
+const getEssaysByQuery = (essays, keywords) => {
+    let relatedEssays = essays
+    .filter(essay => {
+        essay.score = 0;
+        essay.keywords.forEach(word => {
+            if(
+                keywords.includes(word)
+            ){
+                essay.score += 1
+            }
+        })
+        if(essay.score > 0) return true;
+    })
+    .sort((firstEssay, secondEssay) => {
+        return secondEssay.score - firstEssay.score
+    })
+
+    return relatedEssays;
+}
+
 //mongoDB URI
 mongoURI = 'mongodb://localhost:27017/essays';
 
@@ -88,6 +108,15 @@ Router.get('/:id', (req, res) => {
     }
 });
 
+//getting essays that match query
+//and ordering them by how similar the thesis is
+Router.get('/search/:query', (req, res) => {
+    let keywords = req.params.query
+    .split('+')
+    .map(keyword => keyword.toLowerCase());
+    res.json(getEssaysByQuery(essays, keywords))
+})
+
 //changing the karma of an essay by id
 Router.put('/:id/karma', (req, res) => {
     console.log(req.params.id)
@@ -116,7 +145,10 @@ Router.put('/:id/karma', (req, res) => {
 Router.post('/', (req, res) => {
     let newEssay = req.body;
     newEssay.id = crypto.randomBytes(12).toString('hex');
-    newEssay.keywords = newEssay.thesis.split(' ');
+    newEssay.keywords = newEssay.thesis
+    .split(' ')
+    .map(keyword => keyword.toLowerCase())
+    ;
     newEssay.karma = 0;
 
     essays.push(newEssay)

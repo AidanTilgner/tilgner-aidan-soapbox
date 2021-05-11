@@ -51,7 +51,18 @@
     {
         "topic": "Food",
         "thumbnail": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "keywords": [],
+        "keywords": [
+            "butter",
+            "food",
+            "healthy",
+            "crunchy",
+            "sandwich",
+            "burger",
+            "bread",
+            "delicious",
+            "tasty",
+            "tastiest"
+        ],
         "essays": []
     }
 ]

@@ -45,9 +45,14 @@ class App extends React.Component {
             <Route path='/home'>
                 <Home/>
             </Route> 
-            <Route path="/search/:query">
-              <Search/>
-            </Route>
+            <Route 
+              path="/search/:query"
+              render={props => {
+                return(
+                  <Search {...props}/>
+                )
+              }}
+            />
             <Route 
               exact path="/essay/:id"
               render={props => {
