@@ -26,6 +26,10 @@ const getRecommendedEssays = (essays) => {
     return essays;
 }
 
+const getEssayById = (essays, id) => {
+    return essays.find(essay => essay.id === id);
+}
+
 //mongoDB URI
 mongoURI = 'mongodb://localhost:27017/essays';
 
@@ -71,6 +75,16 @@ const upload = multer({ storage });
 //getting recommended essays from the database
 Router.get('/', (req, res) => {
     res.json(getRecommendedEssays(essays)).status(200);
+});
+
+//getting a specific essay by id
+Router.get('/:id', (req, res) => {
+    let essay = getEssayById(essays, req.params.id);
+    if(essay !== false){
+        res.json(essay).status(200)
+    }else{
+        res.status(404);
+    }
 });
 
 //posting a new file to the database

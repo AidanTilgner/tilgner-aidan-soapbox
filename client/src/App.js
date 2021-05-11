@@ -48,9 +48,14 @@ class App extends React.Component {
             <Route path="/search/:query">
               <Search/>
             </Route>
-            <Route path="/essays/:id">
-              <EssayView/>
-            </Route>
+            <Route 
+              exact path="/essay/:id"
+              render={props => {
+                return(
+                  <EssayView {...props}/>
+                )
+              }}
+            />
             <Route path="/topics">
               <Topics/>
             </Route>
@@ -58,9 +63,14 @@ class App extends React.Component {
               path="/upload"
               component={Upload}
             />
-            <Route path="/user/:username">
-              <UserProfile/>
-            </Route>
+            <Route 
+              exact path="/user/:username"
+              render={props => {
+                return(
+                  <UserProfile {...props}/>
+                )
+              }}
+            />
           </Switch>
       </div>
     );

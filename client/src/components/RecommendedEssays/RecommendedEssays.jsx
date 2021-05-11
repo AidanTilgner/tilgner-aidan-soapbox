@@ -51,6 +51,7 @@ class RecommenedEssays extends React.Component {
                                 title={essay.title}
                                 channel={essay.username}
                                 karma={essay.karma}
+                                id={essay.id}
                             />
                         )
                     })}
