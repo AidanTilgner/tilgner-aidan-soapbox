@@ -39,6 +39,7 @@
         align-items: center;
         margin-left: auto;
         color: $white;
+        position: relative;
     }
 
     &__item{
@@ -48,6 +49,70 @@
     &__link{
         text-decoration: none;
         color: #fff;
+    }
+
+    @keyframes searchInMobile {
+        from {
+            width: 0;
+        }
+        to{
+            width: 125px;
+        }
+
+    }
+
+    @keyframes searchInTablet{
+        from {
+            width: 0;
+        }
+        to{
+            width: 93.5%;
+        }
+    }
+
+    @keyframes searchInDesktop {
+        from {
+            width: 0;
+        }
+        to{
+            width: 200px;
+        }
+    }
+
+    &__search{
+        animation-name: searchInMobile;
+        animation-duration: .4s;
+        animation-timing-function: ease-in-out;
+        border-radius: 8px;
+        border: none;
+        padding: 10px 10px;
+        width: 125px;
+
+        @include tablet{
+            animation-name: searchInTablet;
+            width: 93.5%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: auto;
+            padding: 10px 10px;
+        }
+
+        @include desktop{
+            position: initial;
+            animation-name: searchInDesktop;
+            width: 200px;
+        }
+
+
+        &:focus{
+            outline: none;
+        }
+
+        &--label{
+
+        }
     }
 
     &__user-profile{

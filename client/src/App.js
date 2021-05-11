@@ -28,23 +28,19 @@ class App extends React.Component {
     username: "aidantilgner02"
   }
 
-  componentDidMount = () => {
-    // axios.get(`${API_URL}/users/${this.state.username}`)
-    // .then(res => {
-    //   this.setState({
-
-    //   })
-    // })
-  } 
-
   render(){
     return (
       <div className="App">
           <Switch>
             <Redirect exact from='/' to='/home'/>
-            <Route path='/home'>
-                <Home/>
-            </Route> 
+            <Route 
+              path="/home"
+              render={props => {
+                return(
+                  <Home {...props}/>
+                )
+              }}
+            />
             <Route 
               path="/search/:query"
               render={props => {
